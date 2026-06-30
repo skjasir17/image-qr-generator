@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Image QR Generator</title>
+
+    <meta name="description"
+        content="Upload your image and generate a QR Code instantly.">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- QR Library -->
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <!-- Welcome Screen -->
+
+<div id="welcome-screen">
+
+    <div class="welcome-content">
+
+        <h1>
+            Made with
+            <span class="heart">❤️</span>
+        </h1>
+
+        <h2 id="typing"></h2>
+
+        <p>Image QR Generator</p>
+
+    </div>
+
+</div>
+
+    <div class="background"></div>
+
+    <main class="container">
+
+        <div class="card">
+
+            <div class="title">
+
+                <i class="fa-solid fa-qrcode"></i>
+
+                <h1>Image QR Generator</h1>
+
+                <p>
+                    Upload your image and generate a QR Code instantly.
+                </p>
+
+            </div>
+
+            <!-- Upload Area -->
+
+            <div class="upload-area" id="dropArea">
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept=".jpg,.jpeg,.png,.webp"
+                    hidden>
+
+                <img
+                    src="https://cdn-icons-png.flaticon.com/512/685/685655.png"
+                    id="previewImage"
+                    alt="Preview">
+
+                <h3>
+                    Drag & Drop Image
+                </h3>
+
+                <span>or</span>
+
+                <button
+                    class="browse-btn"
+                    id="browseBtn">
+
+                    Browse Image
+
+                </button>
+
+                <small>
+
+                    JPG • PNG • WEBP <br>
+
+                    Maximum 20 MB
+
+                </small>
+
+            </div>
+
+            <!-- Progress -->
+
+            <div class="progress-box hidden" id="progressBox">
+
+                <div class="progress">
+
+                    <div
+                        class="progress-fill"
+                        id="progressFill">
+
+                    </div>
+
+                </div>
+
+                <p id="progressText">
+                    Uploading...
+                </p>
+
+            </div>
+
+            <!-- Generate -->
+
+            <button
+                id="generateBtn"
+                class="generate-btn">
+
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+
+                Generate QR
+
+            </button>
+
+            <!-- Loader -->
+
+            <div
+                id="loader"
+                class="loader hidden">
+
+                <div class="spinner"></div>
+
+                <p>
+
+                    Please wait...
+
+                </p>
+
+            </div>
+
+            <!-- QR Result -->
+
+            <section
+                id="result"
+                class="hidden">
+
+                <h2>
+
+                    QR Code Ready
+
+                </h2>
+
+                <canvas id="qrCanvas"></canvas>
+
+                <button
+                    id="downloadBtn"
+                    class="download-btn">
+
+                    <i class="fa-solid fa-download"></i>
+
+                    Download QR
+
+                </button>
+
+            </section>
+
+        </div>
+        <footer class="footer">
+    Made with ❤️ by <span>Shaikh Jasir</span>
+</footer>
+
+    </main>
+
+    <!-- Toast -->
+
+    <div
+        id="toast"
+        class="toast">
+
+    </div>
+   
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
