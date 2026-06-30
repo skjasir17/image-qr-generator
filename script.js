@@ -56,6 +56,17 @@ dropArea.addEventListener("drop", (e) => {
 });
 
 let imageFile = null;
+const cameraBtn = document.getElementById("cameraBtn");
+const cameraInput = document.getElementById("cameraInput");
+
+cameraBtn.addEventListener("click", () => {
+    cameraInput.click();
+});
+
+cameraInput.addEventListener("change", (e) => {
+    imageInput.files = e.target.files;
+    imageInput.dispatchEvent(new Event("change"));
+});
 
 
 // Preview Image
